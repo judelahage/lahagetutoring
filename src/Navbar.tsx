@@ -25,7 +25,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) =
               className="flex items-center gap-4 hover:opacity-90 transition-opacity focus:outline-none"
               aria-label="Lahage Tutoring Home"
             >
-              <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Lahage Tutoring Services" className="h-8 w-auto" aria-hidden="true" />
+              <img src={"public/logo.png"} alt="Lahage Tutoring Services" className="h-8 w-auto" aria-hidden="true" />
 
               <span className="text-2xl font-bold text-forest tracking-tight">
                 Lahage<span className="text-brass">Tutoring</span>
