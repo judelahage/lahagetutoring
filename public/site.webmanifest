@@ -3,12 +3,12 @@
     "short_name": "Lahage",
     "icons": [
         {
-            "src": "/icon-192.png",
+            "src": "https://image2url.com/r2/default/images/1769538304869-24aae6ca-2182-4b2f-a3cc-d2a644d83931.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/icon-512.png",
+            "src": "https://image2url.com/r2/default/images/1769538334983-1bf94127-5f88-42b8-800c-12657e6a2922.png",
             "sizes": "512x512",
             "type": "image/png"
         }
