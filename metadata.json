@@ -1,0 +1,8 @@
+{
+  "name": "Lahage Tutoring Revamp",
+  "description": "A high-conversion, modern website for Lahage Tutoring featuring a Gemini-powered study assistant and academic roadmap generator.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+:root {
+  --forest: #143D31;
+  --forest-dark: #0F2922;
+  --brass: #C5A059;
+  --offwhite: #FCFAF7;
+  --linen: #F2EFE9;
+  --sage: #E9F0EE;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--offwhite);
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--forest-dark);
+}
