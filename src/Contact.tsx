@@ -4,8 +4,7 @@ import React, { useState } from 'react';
 export const Contact: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     setSubmitted(true);
   };
 
@@ -49,20 +48,19 @@ export const Contact: React.FC = () => {
                 <p className="text-slate-600">We've received your request and will be in touch shortly to schedule your consultation.</p>
               </div>
             ) : (
-              <form name = "contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} className="space-y-6">
+              <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} className="space-y-6">
                 <input type="hidden" name="form-name" value="contact" />
-
                 <p hidden>
                   <label>Don't fill this out: <input name ="bot-field" /></label>
                 </p>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">Parent Name *</label>
-                    <input type="text" required className="w-full p-3 border border-sage rounded-xl bg-sage/10 focus:ring-2 focus:ring-forest outline-none transition-all" />
+                    <input name="parentName" type="text" required className="w-full p-3 border border-sage rounded-xl bg-sage/10 focus:ring-2 focus:ring-forest outline-none transition-all" />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">Student Grade Level *</label>
-                    <select className="w-full p-3 border border-sage rounded-xl bg-sage/10 focus:ring-2 focus:ring-forest outline-none transition-all">
+                    <select name="gradeLevel" className="w-full p-3 border border-sage rounded-xl bg-sage/10 focus:ring-2 focus:ring-forest outline-none transition-all">
                       <option>Middle School</option>
                       <option>9th Grade</option>
                       <option>10th Grade</option>
@@ -73,11 +71,11 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-2">Email Address *</label>
-                  <input type="email" required className="w-full p-3 border border-sage rounded-xl bg-sage/10 focus:ring-2 focus:ring-forest outline-none transition-all" />
+                  <input name="email" type="email" required className="w-full p-3 border border-sage rounded-xl bg-sage/10 focus:ring-2 focus:ring-forest outline-none transition-all" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-2">Primary Subject of Interest *</label>
-                  <select className="w-full p-3 border border-sage rounded-xl bg-sage/10 focus:ring-2 focus:ring-forest outline-none transition-all">
+                  <select name="subject" className="w-full p-3 border border-sage rounded-xl bg-sage/10 focus:ring-2 focus:ring-forest outline-none transition-all">
                     <option>SAT / ACT Prep</option>
                     <option>Math Tutoring</option>
                     <option>Science Tutoring</option>
@@ -85,7 +83,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-2">Tell us about your student's challenges</label>
-                  <textarea rows={4} className="w-full p-3 border border-sage rounded-xl bg-sage/10 focus:ring-2 focus:ring-forest outline-none transition-all"></textarea>
+                  <textarea name="challenges" rows={4} className="w-full p-3 border border-sage rounded-xl bg-sage/10 focus:ring-2 focus:ring-forest outline-none transition-all"></textarea>
                 </div>
                 <button 
                   type="submit"
