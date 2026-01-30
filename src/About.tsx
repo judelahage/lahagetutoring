@@ -23,7 +23,7 @@ export const About: React.FC<AboutProps> = ({ navigate }) => {
             </div>
           </div>
           <div className="relative">
-            <img src="https://picsum.photos/seed/lahage/600/800" alt="Tutoring in Action" className="rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" />
+            <img src="https://image2url.com/r2/default/images/1769735432508-a0b5a49e-53b9-4203-ba19-5e07384a78bc.png" alt="Tutoring in Action" className="rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" />
             <div className="absolute -bottom-8 -left-8 bg-forest text-white p-8 rounded-2xl shadow-xl hidden md:block border-b-4 border-brass">
               <div className="text-4xl font-bold mb-1 text-white">3+</div>
               <div className="text-sm uppercase tracking-widest opacity-80 text-white">Years Experience</div>
