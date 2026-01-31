@@ -26,7 +26,7 @@ export const Home: React.FC<HomeProps> = ({ navigate }) => {
                 Book Your Consultation
               </button>
               <button 
-                onClick={() => navigate('contact')}
+                onClick={() => navigate('services')}
                 className="bg-transparent text-forest border-2 border-forest px-8 py-4 rounded-xl text-lg font-bold hover:bg-sage transition-all"
               >
                 Explore Services
