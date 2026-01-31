@@ -13,6 +13,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) =
     { name: 'Home', id: 'home' },
     { name: 'Services', id: 'services' },
     { name: 'About', id: 'about' },
+    { name: 'Contact', id: 'contact'}
   ];
 
   return (
@@ -46,7 +47,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) =
               </button>
             ))}
             <button
-              onClick={() => setCurrentPage('contact')}
+              onClick={() => window.open("https://calendly.com/jude-lahagetutoring/10min", "_self")}
               className="bg-forest text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover-bg-forest-dark transition-all shadow-md active:scale-95"
             >
               Book a Consultation

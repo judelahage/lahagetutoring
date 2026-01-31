@@ -26,7 +26,7 @@ export const Home: React.FC<HomeProps> = ({ navigate }) => {
                 Book Your Consultation
               </button>
               <button 
-                onClick={() => navigate('services')}
+                onClick={() => window.open("https://calendly.com/jude-lahagetutoring/10min", "_self")}
                 className="bg-transparent text-forest border-2 border-forest px-8 py-4 rounded-xl text-lg font-bold hover:bg-sage transition-all"
               >
                 Explore Services
@@ -184,7 +184,7 @@ export const Home: React.FC<HomeProps> = ({ navigate }) => {
              <h2 className="text-4xl font-bold mb-6 relative z-10 text-white">Start Your Student's Transformation Today</h2>
              <p className="text-xl text-sage mb-10 max-w-2xl mx-auto relative z-10 opacity-90">Book a complimentary consultation to see how we can help your student reach their peak potential.</p>
              <button 
-              onClick={() => navigate('contact')}
+              onClick={() => window.open("https://calendly.com/jude-lahagetutoring/10min", "_self")}
               className="bg-brass text-forest px-10 py-4 rounded-xl text-xl font-bold hover:bg-opacity-90 transition-all shadow-xl hover:-translate-y-1 relative z-10"
              >
                Book Consultation
