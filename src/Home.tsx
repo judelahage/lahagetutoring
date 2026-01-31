@@ -166,10 +166,10 @@ export const Home: React.FC = () => {
           <h2 className="text-4xl font-bold text-forest text-center mb-12">Common Questions</h2>
           <div className="space-y-4">
             {[
-              { q: "Where do sessions take place?", a: "We offer both in-home sessions (local availability) and high-fidelity online sessions via Zoom/Whiteboard." },
-              { q: "How long is each session?", a: "Typically 60 or 90 minutes, depending on the subject complexity and student attention span." },
+              { q: "Where do sessions take place?", a: "We offer both in-home sessions (local availability) and high-fidelity online sessions via Google Meet." },
+              { q: "How long is each session?", a: "Typically 60 or 90 minutes, depending on the subject complexity." },
               { q: "Do you offer group rates?", a: "We specialize in 1-on-1 mentorship for maximum impact, but small group test prep is available upon request." },
-              { q: "How do you track progress?", a: "Parents receive a detailed summary after every session, plus monthly diagnostic score tracking." }
+              { q: "How do you track progress?", a: "Notes from every session are recorded to ensure progress is up to date." }
             ].map((item, i) => (
               <details key={i} className="group bg-offwhite border rounded-xl overflow-hidden shadow-sm">
                 <summary className="p-6 cursor-pointer font-bold text-forest flex justify-between items-center list-none">
