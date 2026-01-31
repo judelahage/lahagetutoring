@@ -1,20 +1,12 @@
 
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
-interface FooterProps {
-  setCurrentPage: (page: any) => void;
-}
+export const Footer: React.FC = () => {
+  const navigate = useNavigate();
 
-export const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
   const handleSuccessStoriesClick = () => {
-    setCurrentPage('home');
-    // Small timeout to allow the Home component to mount before scrolling
-    setTimeout(() => {
-      const element = document.getElementById('testimonials');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+    navigate('/#testimonials');
   };
 
   return (
@@ -23,7 +15,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
         <div className="grid md:grid-cols-4 gap-12 mb-12 border-b border-sage/20 pb-12">
           <div className="col-span-2">
             <button 
-              onClick={() => setCurrentPage('home')}
+              onClick={() => navigate('/')}
               className="mb-6 flex items-center hover:opacity-90 transition-opacity focus:outline-none"
               aria-label="Lahage Tutoring Home"
             >
@@ -36,10 +28,10 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
           <div>
             <h4 className="font-bold mb-6 text-brass uppercase text-xs tracking-widest">Quick Links</h4>
             <ul className="space-y-4 text-sage">
-              <li><button onClick={() => setCurrentPage('services')} className="hover:text-white transition-colors">Services</button></li>
-              <li><button onClick={() => setCurrentPage('about')} className="hover:text-white transition-colors">About Us</button></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">Services</Link></li>
+              <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><button onClick={handleSuccessStoriesClick} className="hover:text-white transition-colors">Success Stories</button></li>
-              <li><button onClick={() => setCurrentPage('contact')} className="hover:text-white transition-colors">Contact</button></li>
+              <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
           <div>

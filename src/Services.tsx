@@ -1,11 +1,9 @@
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-interface ServicesProps {
-  navigate: (page: any) => void;
-}
-
-export const Services: React.FC<ServicesProps> = ({ navigate }) => {
+export const Services: React.FC = () => {
+  const navigate = useNavigate();
   const serviceCategories = [
     {
       title: "Test Preparation",
@@ -50,7 +48,7 @@ export const Services: React.FC<ServicesProps> = ({ navigate }) => {
                     ))}
                   </ul>
                   <button 
-                    onClick={() => navigate('contact')}
+                    onClick={() => navigate('/contact')}
                     className="w-full py-3 border-2 border-forest text-forest font-bold rounded-xl hover:bg-forest hover:text-white transition-all"
                   >
                     Inquire Now

@@ -1,11 +1,20 @@
 
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-interface HomeProps {
-  navigate: (page: any) => void;
-}
+export const Home: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
 
-export const Home: React.FC<HomeProps> = ({ navigate }) => {
+  useEffect(() => {
+    if (location.hash === '#testimonials') {
+      const element = document.getElementById('testimonials');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location.hash]);
+
   return (
     <div>
       {/* Hero Section */}
@@ -26,7 +35,7 @@ export const Home: React.FC<HomeProps> = ({ navigate }) => {
                 Book Your Consultation
               </button>
               <button 
-                onClick={() => navigate('services')}
+                onClick={() => navigate('/services')}
                 className="bg-transparent text-forest border-2 border-forest px-8 py-4 rounded-xl text-lg font-bold hover:bg-sage transition-all"
               >
                 Explore Services
@@ -87,7 +96,7 @@ export const Home: React.FC<HomeProps> = ({ navigate }) => {
               <h2 className="text-4xl font-bold text-forest mb-4">How We Can Help</h2>
               <p className="text-slate-600">Tailored programs designed for specific academic goals.</p>
             </div>
-            <button onClick={() => navigate('services')} className="text-brass font-bold flex items-center gap-2 hover:gap-3 transition-all">
+            <button onClick={() => navigate('/services')} className="text-brass font-bold flex items-center gap-2 hover:gap-3 transition-all">
               See All Services <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
             </button>
           </div>
@@ -101,7 +110,7 @@ export const Home: React.FC<HomeProps> = ({ navigate }) => {
                 <div className="text-4xl mb-6">{s.icon}</div>
                 <h3 className="text-xl font-bold text-forest mb-3 group-hover:text-brass transition-colors">{s.title}</h3>
                 <p className="text-slate-600 mb-6">{s.desc}</p>
-                <button onClick={() => navigate('contact')} className="text-sm font-bold text-forest group-hover:underline">Inquire →</button>
+                <button onClick={() => navigate('/contact')} className="text-sm font-bold text-forest group-hover:underline">Inquire →</button>
               </div>
             ))}
           </div>

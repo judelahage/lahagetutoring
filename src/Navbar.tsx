@@ -1,19 +1,16 @@
 
 import React, { useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 
-interface NavbarProps {
-  currentPage: string;
-  setCurrentPage: (page: any) => void;
-}
-
-export const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) => {
+export const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navItems = [
-    { name: 'Home', id: 'home' },
-    { name: 'Services', id: 'services' },
-    { name: 'About', id: 'about' },
-    { name: 'Contact', id: 'contact'}
+    { name: 'Home', to: '/' },
+    { name: 'Services', to: '/services' },
+    { name: 'About', to: '/about' },
+    { name: 'Contact', to: '/contact' }
   ];
 
   return (
@@ -22,7 +19,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) =
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <button 
-              onClick={() => setCurrentPage('home')}
+              onClick={() => navigate('/')}
               className="flex items-center gap-4 hover:opacity-90 transition-opacity focus:outline-none"
               aria-label="Lahage Tutoring Home"
             >
@@ -36,15 +33,17 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) =
           
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => setCurrentPage(item.id)}
-                className={`text-sm font-medium transition-colors ${
-                  currentPage === item.id ? 'text-brass' : 'text-slate-600 hover:text-forest'
-                }`}
+              <NavLink
+                key={item.to}
+                to={item.to}
+                className={({ isActive }) =>
+                  `text-sm font-medium transition-colors ${
+                    isActive ? 'text-brass' : 'text-slate-600 hover:text-forest'
+                  }`
+                }
               >
                 {item.name}
-              </button>
+              </NavLink>
             ))}
             <button
               onClick={() => window.open("https://calendly.com/jude-lahagetutoring/10min", "_self")}
@@ -72,16 +71,20 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) =
         <div className="md:hidden bg-offwhite border-b">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => { setCurrentPage(item.id); setIsMenuOpen(false); }}
+              <NavLink
+                key={item.to}
+                to={item.to}
+                onClick={() => setIsMenuOpen(false)}
                 className="block w-full text-left px-3 py-2 text-base font-medium text-slate-600 hover:bg-sage"
               >
                 {item.name}
-              </button>
+              </NavLink>
             ))}
             <button
-              onClick={() => { setCurrentPage('contact'); setIsMenuOpen(false); }}
+              onClick={() => {
+                setIsMenuOpen(false);
+                window.open("https://calendly.com/jude-lahagetutoring/10min", "_self");
+              }}
               className="block w-full text-center mt-4 bg-forest text-white px-3 py-2 rounded-md font-medium"
             >
               Book a Consultation

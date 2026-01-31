@@ -1,11 +1,7 @@
 
 import React from 'react';
 
-interface AboutProps {
-  navigate: (page: any) => void;
-}
-
-export const About: React.FC<AboutProps> = ({ navigate }) => {
+export const About: React.FC = () => {
   return (
     <div className="py-20 bg-offwhite">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
