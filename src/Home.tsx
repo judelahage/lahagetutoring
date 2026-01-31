@@ -176,7 +176,7 @@ export const Home: React.FC = () => {
                   {item.q}
                   <span className="text-brass group-open:rotate-180 transition-transform">▼</span>
                 </summary>
-                <div className="p-6 pt-4 text-slate-600 border-t border-sage">
+                <div className="p-6 pt-6 text-slate-600 border-t border-sage">
                   {item.a}
                 </div>
               </details>
