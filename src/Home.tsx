@@ -20,13 +20,13 @@ export const Home: React.FC<HomeProps> = ({ navigate }) => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <button 
-                onClick={() => navigate('contact')}
+                onClick={() => window.open("https://calendly.com/jude-lahagetutoring/10min", "_self")}
                 className="bg-forest text-white px-8 py-4 rounded-xl text-lg font-bold hover-bg-forest-dark transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
               >
                 Book Your Consultation
               </button>
               <button 
-                onClick={() => window.open("https://calendly.com/jude-lahagetutoring/10min", "_self")}
+                onClick={() => navigate('contact')}
                 className="bg-transparent text-forest border-2 border-forest px-8 py-4 rounded-xl text-lg font-bold hover:bg-sage transition-all"
               >
                 Explore Services
